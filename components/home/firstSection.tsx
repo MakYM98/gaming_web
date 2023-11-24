@@ -6,7 +6,7 @@ const FirstSection = () => {
                     A collection of simple yet engaging games awaits you.
                 </h1>
                 <button className="bg-yellow-500 w-1/4 rounded-2xl p-2 text-xl">
-                    Play Now
+                    Learn More
                 </button>
             </div>
         </div> 
