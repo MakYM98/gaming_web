@@ -2,21 +2,21 @@
     "about": [
         {
             "Title":"Purpose",
-            "Description":"This website is a side project of mine to showcase my skills in ReactJS & Tailwind.",
+            "Description":"I created this website with small arcade games as a side project to offer a digital haven for gamers seeking quick and enjoyable diversions. The purpose is to blend nostalgia with modern accessibility, fostering a sense of community and shared joy among enthusiasts. Additionally, it serves as a personal exploration into web development and game design, reflecting my passion for technology and gaming. Ultimately, the project is a labor of love, celebrating the timeless appeal of arcade gaming in the digital age.",
             "Button":"",
-            "Image":"../../public/background.jpg"
+            "Image":"about1"
         },
         {
             "Title":"Self-Developed",
-            "Description":"",
+            "Description":"This website was crafted using JavaScript, React, and Tailwind CSS. JavaScript provided dynamic functionality, React modularized the codebase for efficiency, and Tailwind CSS enabled rapid styling with its utility-first approach. This integration resulted in a highly interactive and responsive gaming site, where React's virtual DOM ensured smooth user experiences and Tailwind CSS facilitated quick and consistent styling adjustments.",
             "Button":"",
-            "Image":"../../public/background.jpg"
+            "Image":"about2"
         },
         {
             "Title":"Free Arcade Games",
-            "Description":"Apart from this landing page, you are also able to enjoy multiple games such as Tetris in this website as well! Click below to find out more!",
+            "Description":"This gaming website features a variety of arcade games, offering users a diverse and entertaining selection. Each game combines classic arcade fun with modern technology for a seamless and enjoyable gaming experience. The platform caters to a broad audience, providing both nostalgic classics and engaging new challenges.",
             "Button":"Find Out More",
-            "Image":"../../public/background.jpg"
+            "Image":"about3"
         }
     ]
 }
