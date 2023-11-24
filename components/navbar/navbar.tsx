@@ -13,7 +13,7 @@ const NavBar = () => {
                     <NavItems/>
                 </div>
                 {/* Play Button */}
-                <div className="w-1/4 flex justify-end pr-5 py-1">
+                <div className="w-1/4 flex justify-end pr-10 py-1">
                     <button className="h-full bg-yellow-500 text-xl px-5 rounded-xl">
                         Play Now
                     </button>
