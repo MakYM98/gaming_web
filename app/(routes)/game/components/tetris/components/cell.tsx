@@ -7,8 +7,8 @@ interface CellProps {
 
 const Cell = ({type}:CellProps) => {
     return ( 
-        <div>
-            Cell
+        <div className='text-black'>
+            {type}
         </div>
     );
 }

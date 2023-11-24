@@ -9,7 +9,11 @@ interface StageProps {
 const Stage = ({stage}: StageProps) => {
     return ( 
         <div>
-            Stage
+            {
+                stage.map((row:any) => row.map((cell:any, x:any) => (
+                    <Cell key={x} type={cell[0]}/>
+                )))
+            }
         </div>
     );
 }

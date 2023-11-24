@@ -4,16 +4,13 @@ import React from 'react'
 import Stage from './components/stage'
 import Display from './components/display'
 import StartBtn from './components/startBtn'
+import { createStage } from './hooks/gameHelper'
 
 
-interface StartBtnProps {
-    callback: any
-}
-
-const Tetris = ({callback}: StartBtnProps) => {
+const Tetris = () => {
     return ( 
         <div>
-            <Stage stage={"test"}/>
+            <Stage stage={createStage()}/>
             <aside>
                 <div>
                     <Display text="Score" gameOver={"Test"}/>
