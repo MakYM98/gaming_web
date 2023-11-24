@@ -1,0 +1,22 @@
+{
+    "about": [
+        {
+            "Title":"Purpose",
+            "Description":"This website is a side project of mine to showcase my skills in ReactJS & Tailwind.",
+            "Button":"",
+            "Image":"../../public/background.jpg"
+        },
+        {
+            "Title":"Self-Developed",
+            "Description":"",
+            "Button":"",
+            "Image":"../../public/background.jpg"
+        },
+        {
+            "Title":"Free Arcade Games",
+            "Description":"Apart from this landing page, you are also able to enjoy multiple games such as Tetris in this website as well! Click below to find out more!",
+            "Button":"Find Out More",
+            "Image":"../../public/background.jpg"
+        }
+    ]
+}
