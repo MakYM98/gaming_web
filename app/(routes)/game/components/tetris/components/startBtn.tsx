@@ -21,6 +21,7 @@ const StartBtn = ({callback}: StartBtnProps) => {
                 cursor:'pointer',
                 outline:'none'
             }}
+            onClick={callback}
         >
             Start Game
         </div>
