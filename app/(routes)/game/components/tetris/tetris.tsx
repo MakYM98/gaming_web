@@ -39,9 +39,3 @@ const Tetris = () => {
 }
  
 export default Tetris;
-
-// styledTetris display:flex align-items: flex-start padding 40px margin 0 auto max-w-900px
-//  aside {w-100% max-width:200px display:block padding 0 20px}
-
-// styledStage display:grid grid-template-rows: repeat(${props => props.height}, calc(25vw / ${props => props.width}))
-//  grid-template-columns: repeat(${props +> props.width}, 1fn) grid-gap 1px border 2px solid #333 width:100% max-width:25vw background #111 
