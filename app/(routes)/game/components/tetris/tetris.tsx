@@ -8,7 +8,7 @@ import StartBtn from './components/startBtn'
 import { usePlayer } from './hooks/usePlayer'
 import { useStage } from './hooks/useStage'
 
-import { createStage } from './hooks/gameHelper'
+import { createStage, checkCollision } from './hooks/gameHelper'
 
 
 const Tetris = () => {
@@ -16,20 +16,32 @@ const Tetris = () => {
     const [gameOver, setGameOver] = useState(false)
 
     const [player, updatePlayerPos, resetPlayer] = usePlayer()
-    const [stage, setStage] = useStage(player)
-
+    const [stage, setStage] = useStage(player, resetPlayer)
+    
     const movePlayer = (dir:any) => {
-        updatePlayerPos({ x: dir, y:0 })
+        if(!checkCollision(player, stage, {x: dir, y:0})){
+            updatePlayerPos({ x: dir, y:0, collided:false })
+        }
     }
 
     const startGame = () => {
         // Reset Everything
         setStage(createStage())
         resetPlayer()
+        setGameOver(false)
     }
 
     const drop = () => {
-        updatePlayerPos({x:0, y:1, collided: false})
+        if (!checkCollision(player, stage, {x: 0, y:1})){
+            updatePlayerPos({x:0, y:1, collided: false})
+        }else {
+            // Game Over
+            if(player.pos.y < 1){
+                setGameOver(true);
+                setDropTime(null)
+            }
+            updatePlayerPos({x:0, y:0, collided: true})
+        }
     }
 
     const dropPlayer = () => {
