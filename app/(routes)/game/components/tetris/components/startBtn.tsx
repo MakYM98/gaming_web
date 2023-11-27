@@ -7,8 +7,22 @@ interface StartBtnProps {
 
 const StartBtn = ({callback}: StartBtnProps) => {
     return ( 
-        <div>
-            Stage
+        <div
+            className='p-[20px] w-full'
+            style={{
+                boxSizing:'border-box',
+                margin:'0 0 20px 0',
+                minHeight:'30px',
+                borderRadius:'20px',
+                border:'none',
+                color:'white',
+                backgroundColor:'#333',
+                fontSize:'1rem',
+                cursor:'pointer',
+                outline:'none'
+            }}
+        >
+            Start Game
         </div>
     );
 }

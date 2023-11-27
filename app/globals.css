@@ -10,6 +10,5 @@ body {
 #firstSecDiv {
   background-image: url('../public/background.jpg');
   background-repeat:no-repeat;
-background-position: center center;
-
+  background-position: center center;
 }
