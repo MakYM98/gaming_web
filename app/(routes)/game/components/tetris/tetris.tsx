@@ -5,6 +5,7 @@ import Stage from './components/stage'
 import Display from './components/display'
 import StartBtn from './components/startBtn'
 
+import { useInterval } from './hooks/useInterval'
 import { usePlayer } from './hooks/usePlayer'
 import { useStage } from './hooks/useStage'
 
@@ -12,7 +13,7 @@ import { createStage, checkCollision } from './hooks/gameHelper'
 
 
 const Tetris = () => {
-    const [dropTime, setDropTime] = useState(null)
+    const [dropTime, setDropTime] = useState<number | null>(null)
     const [gameOver, setGameOver] = useState(false)
 
     const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer()
@@ -28,6 +29,7 @@ const Tetris = () => {
     const startGame = () => {
         // Reset Everything
         setStage(createStage())
+        setDropTime(1000)
         resetPlayer()
         setGameOver(false)
     }
@@ -45,7 +47,16 @@ const Tetris = () => {
         }
     }
 
+    const keyUp = ({keyCode}: {keyCode:any}) => {
+        if(!gameOver){
+            if(keyCode == 40){
+                setDropTime(1000)
+            }
+        }
+    }
+
     const dropPlayer = () => {
+        setDropTime(null)
         drop()
     }
 
@@ -64,12 +75,17 @@ const Tetris = () => {
         }
     }
 
+    useInterval(()=>{
+        drop()
+    }, dropTime)
+
     return ( 
         <div
             className='bg-white h-screen w-75w overflow-hidden'
             role='button'
             tabIndex={0}
             onKeyDown={(e) => move(e)}
+            onKeyUp={keyUp}
         >
             <div
                 className='flex p-[40px] max-w-[900px]'
