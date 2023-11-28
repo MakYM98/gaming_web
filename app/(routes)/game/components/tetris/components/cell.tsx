@@ -26,4 +26,4 @@ const Cell = ({type}:CellProps) => {
     );
 }
  
-export default Cell;
+export default React.memo(Cell);
