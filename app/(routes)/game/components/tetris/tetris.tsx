@@ -89,14 +89,14 @@ const Tetris = () => {
 
     return ( 
         <div
-            className='bg-white h-screen w-75w overflow-hidden'
+            className='bg-black h-screen w-100vw overflow-hidden flex items-center justify-center'
             role='button'
             tabIndex={0}
             onKeyDown={(e) => move(e)}
             onKeyUp={keyUp}
         >
             <div
-                className='flex p-[40px] max-w-[900px]'
+                className='flex p-[40px] w-[900px] items-center justify-center'
                 style={{
                     alignItems: 'flex-start',
                     margin: '0 auto'
@@ -104,7 +104,7 @@ const Tetris = () => {
             >
                 <Stage stage={stage}/>
                 <aside
-                    className='w-full max-w-[200px] block'
+                    className='w-[200px] block'
                     style={{padding:'0 20px'}}
                 >
                     {
