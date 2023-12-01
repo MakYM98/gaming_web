@@ -16,10 +16,8 @@ import { createStage, checkCollision } from './hooks/gameHelper'
 const Tetris = () => {
     const [dropTime, setDropTime] = useState<number | null>(null)
     const [gameOver, setGameOver] = useState(false)
-
     const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer()
     const [stage, setStage, rowsCleared] = useStage(player, resetPlayer)
-    console.log(useGameStatus)
     const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared)
     
     const movePlayer = (dir:any) => {
@@ -80,7 +78,6 @@ const Tetris = () => {
             }else if(keyCode === 40){
                 dropPlayer()
             }else if(keyCode === 38){
-                console.log(playerRotate)
                 playerRotate(stage, 1)
             }
         }

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import { TETROMINOS,randomTetromino} from './tetrominos'
 import { STAGE_WIDTH, checkCollision } from "./gameHelper";
@@ -34,16 +34,18 @@ export const usePlayer = () => {
                 return
             }
         }
-
         setPlayer(clonedPlayer);
     }
 
     const updatePlayerPos = ({x, y, collided}: { x: number, y: number, collided: boolean }) => {
-        setPlayer(prev => ({
-            ...prev,
-            pos: { x: (prev.pos.x += x) , y: (prev.pos.y += y)},
-            collided
-        }))
+        setPlayer((prev) => {
+            return {
+                ...prev,
+                pos: { x: (prev.pos.x + x) , y: (prev.pos.y + y)},
+                collided:collided
+            }
+        }
+        )
     }
 
     const resetPlayer = useCallback(()=>{
@@ -53,6 +55,8 @@ export const usePlayer = () => {
             collided: false
         })
     },[])
+
+    useEffect(()=>{console.log(player)},[player])
 
     return [ player, updatePlayerPos, resetPlayer, playerRotate ] as const
 }
