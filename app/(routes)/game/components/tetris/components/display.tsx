@@ -21,7 +21,7 @@ const Display = ({gameOver, text}: DisplayProps) => {
                 fontSize: '0.8rem'
             }}
         >
-            Display
+            {text}
         </div>
     );
 }
