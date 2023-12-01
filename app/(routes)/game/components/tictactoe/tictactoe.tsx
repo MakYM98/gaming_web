@@ -65,15 +65,12 @@ const TicTacToe = () => {
     }
 
     return (  
-        <div className="text-center bg-black h-full flex justify-center items-center">
+        <div className="text-center bg-[#dcdcdc] h-full flex justify-center items-center">
             <div>
-                <div className="pt-[20px] text-2xl text-white flex justify-center items-center flex-col">
-                    <h1 className="pb-2">
-                        Tic Tac Toe
-                    </h1>
+                <div className="pt-[20px] text-2xl text-black flex justify-center items-center flex-col w-[600px]">
                     {
                         winner !== ''?
-                            <p className="pb-2 text-[#26ffcb]">
+                            <p className="pb-1 text-[#1f3540]">
                                 Congratulations, {winner} won!
                             </p>
                         :
@@ -82,7 +79,7 @@ const TicTacToe = () => {
                 </div>
                 {/* Board */}
                 <div className="
-                    w-[600px] h-[564px] flex m-auto
+                    w-[600px] h-[600px] flex m-auto
                 ">
                 {
                         board.map(row => (
@@ -91,7 +88,7 @@ const TicTacToe = () => {
                                     row.map(box => (
                                         <div 
                                             className="
-                                                flex h-[180px] w-[180px] bg-[#1f3540]
+                                                flex h-[200px] w-[200px] bg-[#1f3540]
                                                 border-4 border-solid border-[#0f1b21]
                                                 rounded-lg cursor-pointer justify-center
                                                 items-center
@@ -124,8 +121,8 @@ const TicTacToe = () => {
                 </div>
                 <button className="
                     w-[250px] h-[50px] border-none outline-none cursor-pointer
-                    rounded-3xl bg-[#1f3540] text-xl text-[#26ffcb] mt-[25px]
-                    mb-[50px]
+                    rounded-3xl bg-[#1f3540] text-xl text-[#26ffcb] mt-[10px]
+                    mb-[10px]
                 "
                     onClick={()=>{reset()}}
                 >

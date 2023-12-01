@@ -89,7 +89,7 @@ const Tetris = () => {
 
     return ( 
         <div
-            className='bg-black h-screen w-100vw overflow-hidden flex items-center justify-center'
+            className='bg-[#dcdcdc] h-screen w-100vw overflow-hidden flex items-center justify-center focus:outline-none'
             role='button'
             tabIndex={0}
             onKeyDown={(e) => move(e)}
