@@ -3,7 +3,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const TopNav = (props:any) => {
+interface NavProps {
+    coverScroll: ()=>void
+    gameScroll: ()=>void
+}
+
+const TopNav = ({coverScroll, gameScroll}:NavProps) => {
     const router = useRouter()
     const gameList = ['Tetris', 'TicTacToe']
 
@@ -14,8 +19,18 @@ const TopNav = (props:any) => {
                     Yeong Meng
                 </h1>
                 <div className='gap-5 flex text-[#001f3f] font-semibold text-sm'>
-                    <p>Home</p>
-                    <p>Games</p>
+                    <p
+                        onClick={()=>{coverScroll()}}
+                        className='cursor-pointer'
+                    >
+                        Home
+                    </p>
+                    <p
+                        onClick={()=>{gameScroll()}}
+                        className='cursor-pointer'
+                    >
+                        Games
+                    </p>
                 </div>
             </div>
             

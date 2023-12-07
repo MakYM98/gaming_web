@@ -1,11 +1,7 @@
 "use client"
 
-import { useState } from "react";
-import SideNav from "@/components/nav/topNav";
-import Tetris from "@/components/tetris/tetris";
-import TicTacToe from "@/components/tictactoe/tictactoe";
+import { useState, useRef, MutableRefObject } from "react";
 import Image from "next/image";
-import { SiTypescript, SiReact, SiTailwindcss,SiNextdotjs   } from "react-icons/si";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import GameCard from "@/components/game/gameCard";
 import GameModal from "@/components/game/gameModal";
@@ -14,6 +10,8 @@ import TopNav from "@/components/nav/topNav";
 export default function Home() {
     const [startGame, setStartGame] = useState(false)
     const [gameSelected, setGameSelected] = useState('')
+    const coverRef = useRef() as MutableRefObject<HTMLDivElement>
+    const gameRef = useRef() as MutableRefObject<HTMLDivElement>
 
     const chooseGame = (game:string) => {
         setGameSelected(game)
@@ -25,11 +23,16 @@ export default function Home() {
         setStartGame(false)
     }
 
+    const scrollToGame = () => gameRef.current.scrollIntoView()
+    const scrollToCover = () => coverRef.current.scrollIntoView()
 
   return (
     <div className="w-full h-[100vh]  bg-[#f9d84a]">
-        <TopNav/>
-        <div className="flex h-full w-full">
+        <TopNav
+            coverScroll={scrollToCover}
+            gameScroll={scrollToGame}
+        />
+        <div className="flex h-full w-full" ref={coverRef}>
             <GameModal
                 start={startGame}
                 game={gameSelected}
@@ -62,7 +65,7 @@ export default function Home() {
                 />
             </div>
         </div>
-        <div className="flex h-full w-full bg-[#f9d84a] p-5">
+        <div className="flex h-full w-full bg-[#f9d84a] p-5" ref={gameRef}>
             <div className="w-[100%] h-1/2 mt-8 text-xl">
                 <p className="mb-5 text-2xl text-center text-[#001f3f]">
                     Choose a Game here
