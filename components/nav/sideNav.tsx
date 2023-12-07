@@ -1,11 +1,11 @@
 "use client"
 import { useState } from 'react';
-import gameList from '../../data.json'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const SideNav = (props:any) => {
     const router = useRouter()
+    const gameList = ['Tetris', 'TicTacToe']
 
     return ( 
         <div className="w-[10%] h-full bg-[#f9d84a]">
@@ -14,7 +14,7 @@ const SideNav = (props:any) => {
             </div>
             <div className="h-[85%]">
                 {
-                    gameList.games.map(game => (
+                    gameList.map(game => (
                         <div 
                             key={game} 
                             className={`
@@ -31,7 +31,7 @@ const SideNav = (props:any) => {
             </div>
             <div 
                 className="h-[5%] flex items-center justify-center text-lg mb-5 mt-2 hover:bg-[#dcdcdc] cursor-pointer"
-                onClick={()=>{router.push('/')}}    
+                onClick={()=>{props.chooseGame('')}}
             >
                     <Image
                         src={require("@/public/back.svg")}
