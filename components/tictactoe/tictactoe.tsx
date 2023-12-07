@@ -83,10 +83,11 @@ const TicTacToe = () => {
                 ">
                 {
                         board.map(row => (
-                            <div>
+                            <div key={"RowKey"}>
                                 {
                                     row.map(box => (
-                                        <div 
+                                        <div
+                                            key={box} 
                                             className="
                                                 flex h-[200px] w-[200px] bg-[#1f3540]
                                                 border-4 border-solid border-[#0f1b21]
