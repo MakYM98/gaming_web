@@ -65,7 +65,7 @@ const TicTacToe = () => {
     }
 
     return (  
-        <div className="text-center bg-[#dcdcdc] h-full flex justify-center items-center">
+        <div className="text-center bg-[#dcdcdc] h-full w-full flex justify-center items-center">
             <div>
                 <div className="pt-[20px] text-2xl text-black flex justify-center items-center flex-col w-[600px]">
                     {
