@@ -66,7 +66,7 @@ export default function Home() {
             </div>
         </div>
         <div className="flex h-full w-full bg-[#f9d84a] p-5" ref={gameRef}>
-            <div className="w-[100%] h-1/2 mt-8 text-xl">
+            <div className="w-[100%] h-full mt-8 text-xl">
                 <p className="mb-5 text-4xl text-center text-[#001f3f]">
                     Choose a Game here
                 </p>
@@ -81,7 +81,7 @@ export default function Home() {
                         title={'Tic Tac Toe'}
                         selectGame={()=>{chooseGame('TicTacToe')}}
                     />
-                    <div className="col-span-1 w-full flex justify-center items-center gap-2 border-2 p-5 pt-3 border-[#1a5276] rounded-2xl">
+                    <div className="col-span-1 w-full h-full flex items-center justify-center gap-2">
                         <p>More Coming Soon</p>
                     </div>
                 </div>
