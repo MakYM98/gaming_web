@@ -9,24 +9,24 @@ interface GameCardProps {
 
 const GameCard = ({title, img, selectGame}:GameCardProps) => {
     return (  
-        <div className="col-span-1 w-full flex flex-col items-center gap-2 border-2 p-5 pt-3 border-[#808080] rounded-2xl">
-            <p className="text-xl">
-                {title}
-            </p>
+        <div className="col-span-1 w-full flex flex-col items-start gap-2">
             <Image
                 src={require(`@/public/${img}.png`)}
                 alt={title}
-                className="w-3/4"
+                className="w-full rounded-2xl h-full"
             />
+            <p className="text-3xl my-3">
+                {title}
+            </p>
             
             <button 
                 className="
-                    mt-2 border-[#1a5276] border-2 p-2 rounded-2xl w-1/2
+                    mt-2 border-[#1a5276] border-2 p-2 rounded-2xl w-1/4
                     hover:bg-[#1a5276] hover:text-white
                 "
                 onClick={()=>{selectGame()}}
             >
-                Play Now
+                Play
             </button>
         </div>
     );

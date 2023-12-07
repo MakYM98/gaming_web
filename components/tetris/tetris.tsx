@@ -19,6 +19,12 @@ const Tetris = () => {
     const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer()
     const [stage, setStage, rowsCleared] = useStage(player, resetPlayer)
     const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared)
+
+    window.addEventListener("keydown", function(e) {
+        if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+            e.preventDefault();
+        }
+    }, false);
     
     const movePlayer = (dir:any) => {
         if(!checkCollision(player, stage, {x: dir, y:0})){

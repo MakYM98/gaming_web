@@ -67,7 +67,7 @@ export default function Home() {
         </div>
         <div className="flex h-full w-full bg-[#f9d84a] p-5" ref={gameRef}>
             <div className="w-[100%] h-1/2 mt-8 text-xl">
-                <p className="mb-5 text-2xl text-center text-[#001f3f]">
+                <p className="mb-5 text-4xl text-center text-[#001f3f]">
                     Choose a Game here
                 </p>
                 <div className="grid grid-cols-3 gap-2 h-1/2">
