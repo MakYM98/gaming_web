@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const SideNav = (props:any) => {
+const TopNav = (props:any) => {
     const router = useRouter()
     const gameList = ['Tetris', 'TicTacToe']
 
@@ -44,4 +44,4 @@ const SideNav = (props:any) => {
     );
 }
  
-export default SideNav;
+export default TopNav;
