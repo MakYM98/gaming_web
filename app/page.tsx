@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import SideNav from "@/components/nav/sideNav";
+import SideNav from "@/components/nav/topNav";
 import Tetris from "@/components/tetris/tetris";
 import TicTacToe from "@/components/tictactoe/tictactoe";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import { SiTypescript, SiReact, SiTailwindcss,SiNextdotjs   } from "react-icons/
 import { FaLongArrowAltDown } from "react-icons/fa";
 import GameCard from "@/components/game/gameCard";
 import GameModal from "@/components/game/gameModal";
+import TopNav from "@/components/nav/topNav";
 
 export default function Home() {
     const [startGame, setStartGame] = useState(false)
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-[100vh]  bg-[#f9d84a]">
+        <TopNav/>
         <div className="flex h-full w-full">
             <GameModal
                 start={startGame}
